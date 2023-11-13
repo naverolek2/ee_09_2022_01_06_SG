@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Style w JavaScript</title>
+    <link rel="stylesheet" href="styl6.css">
+</head>
+<body>
+    <div id="lewy">
+        <h1>Konfigurator stylu</h1>
+        <p>Podaj kolor czcionki</p>
+        <button id="Indigo" onclick="zmianaTla()">
+            Indigo
+        </button>
+        <button id="SteelBlue" onclick="zmianaTla()">
+            SteelBlue
+        </button>
+        <button id="Olive" onclick="zmianaTla()">
+            Olive
+        </button>
+        <p>Podaj kolor czcionki</p>
+        <select onchange="kolorCz()"  id="kolorCzcionki">
+            <option value="White">White</option>
+            <option value="Tan">Tan </option>
+            <option value="Bisque">Bisque</option>
+            <option value="Plum">Plum</option>
+        </select>
+        <p>Podaj rozmiar czcionki w procentach</p>
+        <input type="text" id="procenty" value="100%" onfocusout="zmianaRozm()">
+        <p>Czy rysunek ma mieć ramkę</p><br>
+        <input type="checkbox" id="ramka" checked onclick="obramowanie()">
+        <p>Jaki jest typ punktatora listy</p><br>
+        <input type="radio" name="es2" id="disc" checked onclick="stylpunkt()">
+        <label for="punktator1">dysk</label><br>
+        <input type="radio" name="es2" id="square" onclick="stylpunkt()">
+        <label for="punktator2">kwadrat</label><br>
+        <input type="radio" name="es2" id="circle" onclick="stylpunkt()">
+        <label for="punktator3">okrąg</label>
+
+        <script>
+            function zmianaTla() {
+                kolor = (event.srcElement.id);
+                document.getElementById("prawy").style.backgroundColor = kolor;
+
+            }
+            function kolorCz() {
+                fontColor = document.getElementById("kolorCzcionki").value;
+                document.getElementById("prawy").style.color = fontColor;
+            }
+            function zmianaRozm() {
+                procenty = document.getElementById("procenty").value;
+                document.getElementById("prawy").style.fontSize = procenty;
+            }
+            function obramowanie() {
+                if(document.getElementById("ramka").checked) {
+                    document.getElementById("obrazek").style.border =  "1px solid white";
+                      }
+                else {
+                    document.getElementById("obrazek").style.border =  "0px";
+                }
+            }
+            function stylpunkt() {
+                punktator = (event.srcElement.id);
+                document.getElementById("lista").style.listStyle = punktator;
+            }
+
+                
+            
+        </script>
+    </div >
+    <div id="prawy">
+        <img src="gibraltar.jpg" alt="półwysep Gibraltar" id="obrazek">
+        <ul id="lista">
+            <li>element 1</li>
+            <li>element 2</li>
+            <li>element 3</li>
+        </ul>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+             Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+              Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+             Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+    </div>
+    <footer>
+        <p>Autor: Sebastian Skiba</p>
+    </footer>
+</body>
+</html>

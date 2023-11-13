@@ -1,0 +1,48 @@
+body {
+    font-family: Georgia, serif;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+#lewy {
+
+    background-color: maroon;
+    color: white;
+    height: 600px;
+    width: 30%;
+}
+#prawy {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: maroon;
+    color: white;
+    height: 600px;
+    width: 70%;
+    overflow: auto;
+    color: Tan bisque;
+}
+footer {
+
+    width: 100%;
+    background-color: dimgray;
+    color: white;
+}
+#prawy > img {
+    height: 300px;
+    padding: 10px;
+    border: 1px solid white;
+}
+p {
+    padding: 10px;
+
+}
+#Indigo {
+    background-color: indigo;
+}
+#SteelBlue {
+    background-color: steelblue;
+}
+#Olive {
+    background-color: Olive;
+    
+}
